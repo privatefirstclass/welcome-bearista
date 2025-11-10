@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Bearista App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css">
+    <style>
+        /* ===== Your Theme ===== */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #2a1f1a, #0d0d0d);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #ffb84d;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #f1e2d0;
+            margin-bottom: 25px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #000;
+            background-color: #ffb84d;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            background-color: #ffc966;
+        }
+
+        .promo-banner {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            padding: 20px;
+            margin: 20px 0;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 140px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .promo-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+            z-index: 1;
+        }
+
+        .promo-text {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .promo-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .promo-sub {
+            font-size: 0.9rem;
+            color: #f1e2d0;
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #b3a99b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Bearista</h1>
+        <p>Experience the sweetest moments with our app. Download the APK now to start!</p>
+
+        <a href="bearista.apk" class="download-btn" download>
+            <ion-icon name="download-outline"></ion-icon> Download APK
+        </a>
+
+        <div class="promo-banner">
+            <div class="promo-text">
+                <div class="promo-title">New Flavors <span>Added!</span></div>
+                <div class="promo-sub">Check out our latest milk tea collections 🍵</div>
+            </div>
+        </div>
+
+        <footer>© 2025 Bearista App</footer>
+    </div>
+</body>
+
+</html>

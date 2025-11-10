@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    /* ===== Professional Desktop Landing Page ===== */
+    /* ===== Professional Desktop Landing Page with Animations ===== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
@@ -27,7 +27,6 @@
       position: relative;
     }
 
-    /* Dark overlay */
     body::before {
       content: '';
       position: absolute;
@@ -51,7 +50,7 @@
       width: 150px;
       filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.5));
       margin-bottom: 20px;
-      animation: fadeInDown 1s ease;
+      animation: fadeInDown 1s ease forwards;
     }
 
     .hero h1 {
@@ -68,6 +67,9 @@
       max-width: 650px;
       margin-bottom: 30px;
       line-height: 1.5;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+      opacity: 0;
     }
 
     .download-btn {
@@ -83,6 +85,7 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
       text-decoration: none;
       transition: all 0.3s ease;
+      animation: pulse 2s infinite;
     }
 
     .download-btn:hover {
@@ -91,7 +94,6 @@
       background-color: #ffc966;
     }
 
-    /* Feature Highlights Row */
     .features {
       z-index: 1;
       display: flex;
@@ -110,7 +112,15 @@
       width: 200px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
     }
+
+    /* staggered animation delays for feature boxes */
+    .feature-box:nth-child(1) { animation-delay: 0.2s; }
+    .feature-box:nth-child(2) { animation-delay: 0.4s; }
+    .feature-box:nth-child(3) { animation-delay: 0.6s; }
+    .feature-box:nth-child(4) { animation-delay: 0.8s; }
 
     .feature-box:hover {
       transform: translateY(-5px);
@@ -143,6 +153,16 @@
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px);}
       to { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes pulse {
+      0%,100% { transform: scale(1);}
+      50% { transform: scale(1.05);}
     }
 
     /* Responsive desktop adjustments */

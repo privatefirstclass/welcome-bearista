@@ -1,207 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Bearista App</title>
+  <title>Bearista App</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/css/ionicons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    /* ===== One-Page Modern Coffee Theme ===== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ===== Professional Desktop Landing Page ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #fff4e0;
-      overflow: hidden; /* Prevent scrolling */
-      background: url('images/bg.jpg') no-repeat center center/cover;
-      background-attachment: fixed;
+      overflow: hidden; /* no scrolling */
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      background: url('images/bg.jpg') no-repeat center center/cover;
+      background-attachment: fixed;
+      position: relative;
     }
 
+    /* Dark overlay */
     body::before {
       content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(42, 31, 26, 0.6);
-      z-index: -1;
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(42,31,26,0.65);
+      z-index: 0;
     }
 
-    header {
-      text-align: center;
-      padding: 30px 20px 20px;
-      flex: 1;
+    .hero {
+      z-index: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      z-index: 1;
+      justify-content: center;
+      text-align: center;
+      min-height: 80vh;
+      padding: 0 50px;
     }
 
-    .logo {
-      width: 100px;
-      height: auto;
-      margin-bottom: 15px;
-      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
-      animation: fadeInDown 1.2s ease;
+    .hero .logo {
+      width: 150px;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.5));
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease;
     }
 
-    header h1 {
+    .hero h1 {
       font-family: 'Lobster', cursive;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       color: #ffb84d;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255, 184, 77, 0.8);
-      animation: glowPulse 3s ease-in-out infinite;
+      text-shadow: 0 0 10px rgba(255,184,77,0.8);
+      animation: glowPulse 3s infinite ease-in-out;
+      margin-bottom: 20px;
     }
 
-    header p {
-      font-size: 1rem;
-      max-width: 400px;
-      margin: 0 auto 15px;
-      overflow-y: auto;
-    }
-
-    header ul {
-      text-align: left;
-      display: inline-block;
-      font-size: 0.9rem;
-      color: #fff4e0;
-      max-height: 100px;
-      overflow-y: auto;
-      padding-left: 15px;
-      margin-bottom: 15px;
-    }
-
-    header ul li {
-      margin: 5px 0;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    header ul li::before {
-      content: '☕';
-      position: absolute;
-      left: 0;
-      color: #ffb84d;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin-bottom: 30px;
+      line-height: 1.5;
     }
 
     .download-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 25px;
-      font-size: 1rem;
+      gap: 12px;
+      padding: 18px 40px;
+      font-size: 1.2rem;
       font-weight: 600;
-      text-decoration: none;
       color: #2a1f1a;
       background-color: #ffb84d;
-      border-radius: 25px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.6);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       background-color: #ffc966;
     }
 
-    section.promo {
-      flex: 1;
+    /* Feature Highlights Row */
+    .features {
+      z-index: 1;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      gap: 15px;
-      max-width: 500px;
-      padding: 15px 20px;
-      background: rgba(42, 31, 26, 0.85);
-      border-radius: 25px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      gap: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+    }
+
+    .feature-box {
+      background: rgba(42,31,26,0.85);
+      border-radius: 20px;
+      padding: 20px 25px;
       text-align: center;
-      overflow-y: auto;
+      width: 200px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
     }
 
-    .promo h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 2rem;
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box ion-icon {
+      font-size: 2.5rem;
       color: #ffb84d;
+      margin-bottom: 10px;
     }
 
-    .promo p {
+    .feature-box p {
       font-size: 0.95rem;
-      max-height: 120px;
-      overflow-y: auto;
+      line-height: 1.4;
     }
 
     footer {
-      text-align: center;
-      font-size: 0.8rem;
+      z-index: 1;
+      font-size: 0.9rem;
       color: #b3a99b;
       padding: 15px 20px;
     }
 
     /* Animations */
     @keyframes glowPulse {
-      0%, 100% { text-shadow: 0 0 10px rgba(255, 184, 77, 0.8); }
-      50% { text-shadow: 0 0 20px rgba(255, 184, 77, 1); }
+      0%,100% { text-shadow: 0 0 10px rgba(255,184,77,0.8); }
+      50% { text-shadow: 0 0 20px rgba(255,184,77,1); }
     }
 
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
-    .fade-in { animation: fadeIn 1.2s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
+    /* Responsive desktop adjustments */
+    @media(max-width: 1200px){
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.1rem; }
+      .feature-box { width: 180px; }
+    }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      header p, header ul li { font-size: 0.85rem; }
-      .promo h2 { font-size: 1.5rem; }
-      .promo p { font-size: 0.85rem; }
+    @media(max-width: 992px){
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+      .features { gap: 25px; }
     }
   </style>
 </head>
-
 <body>
-  <header class="fade-in">
+  <div class="hero">
     <img src="images/bearista.png" alt="Bearista Logo" class="logo">
     <h1>Welcome to Bearista</h1>
-    <p>Step into a world of rich aromas and cozy coffee moments. Our app brings the best milk teas and coffee blends right to your fingertips!</p>
-    <ul>
-      <li>Discover new seasonal drinks and flavors</li>
-      <li>Track your favorite beverages and orders</li>
-      <li>Exclusive discounts and promotions for app users</li>
-      <li>Interactive loyalty rewards and points</li>
-    </ul>
+    <p>Step into a world of rich aromas and cozy coffee moments. Download the Bearista app and enjoy the best milk teas and coffee blends right at your fingertips!</p>
     <a href="bearista.apk" class="download-btn" download>
       <ion-icon name="download-outline"></ion-icon> Download APK
     </a>
-  </header>
+  </div>
 
-  <section class="promo fade-in">
-    <h2>New Flavors Added!</h2>
-    <p>Check out our latest brown sugar milk teas, coffee blends, and cozy seasonal specials. A warm cup of happiness awaits you 🍵</p>
-  </section>
+  <div class="features">
+    <div class="feature-box">
+      <ion-icon name="cafe-outline"></ion-icon>
+      <p>Discover new seasonal drinks and flavors</p>
+    </div>
+    <div class="feature-box">
+      <ion-icon name="heart-outline"></ion-icon>
+      <p>Track your favorite beverages and orders</p>
+    </div>
+    <div class="feature-box">
+      <ion-icon name="pricetag-outline"></ion-icon>
+      <p>Exclusive discounts and promotions</p>
+    </div>
+    <div class="feature-box">
+      <ion-icon name="star-outline"></ion-icon>
+      <p>Interactive loyalty rewards and points</p>
+    </div>
+  </div>
 
-  <footer class="fade-in">
-    © 2025 Bearista App
-  </footer>
+  <footer>© 2025 Bearista App</footer>
 </body>
-
 </html>
